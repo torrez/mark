@@ -15,4 +15,8 @@ for line in all_lines:
     embed = template.replace('XXXXXXXXXX', yt_code) 
     big_string += embed + "<br>"
 
-print(big_string)
+with open('index.html', 'r') as fh:
+    index_file = fh.read()
+
+generated = index_file.replace('XXXXXXXXXX', big_string)
+print(generated)
